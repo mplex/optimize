@@ -1,3 +1,4 @@
+<!--
 ---
 title: Updating the 'EDH' dataset
 subtitle: Digital Literacy 2020--2021 project&nbsp;&nbsp;&nbsp;(Task 2)
@@ -62,17 +63,18 @@ border-radius: 5px;
 
 </style>
 
+-->
 
 
 
 
+# Updating the 'EDH' dataset
 
-
-
-
+## Digital Literacy 2020--2021 project   (Task 2)
 
 <div style="margin-bottom:60px;"> </div>
 
+<br />
 
 ### Preliminaries
 `"sdam"` is an `R` package that provides tools for performing analyses within Social Dynamics and complexity in the
@@ -212,11 +214,11 @@ The `EDH` dataset in `"sdam"` has been built **until 10-11-2020** in this way.
 
 
 
-<div class="see">
-##### More details in
+<br/>
 
-* [`"sdam"` manual](https://github.com/mplex/cedhar/blob/master/typesetting/reports/sdam.pdf)
-</div>
+More details in [sdam" manual](https://github.com/mplex/cedhar/blob/master/typesetting/reports/sdam.pdf)
+
+<br/>
 
 
 <div style="margin-bottom:90px;"> </div>
@@ -228,11 +230,11 @@ For instance, the wrapper function `edhw()` allows extracting specific informati
 specified) and transforming it into a data frame object. 
 
 
-<div class="see">
-##### TODO
+<br/>
 
-Example with function `edhw()`
-</div>
+TODO: Example with function `edhw()`
+
+<br/>
 
 
 <div style="margin-bottom:30px;"> </div>
@@ -309,7 +311,7 @@ EDH <- get.edhw(hd_nr=1:81790)
 
 <div style="margin-bottom:60px;"> </div>
 
-##### UCloud?
+#### DeiC's UCloud?
 These two options take, however, very long time, and running the script on [DeiC's UCloud](https://cloud.sdu.dk/app/login) 
 servers seems to help solving this issue.
 
