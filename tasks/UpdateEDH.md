@@ -265,6 +265,7 @@ get.edhw(hd_nr="79384")$last_update
 ```
 
 <div style="margin-bottom:60px;"> </div>
+
 The purpose of this task is to update the `EDH` dataset, and one possibility is as follows
 
 
@@ -295,11 +296,13 @@ if(is.null(tmp)==FALSE) {
 ```
 
 <div style="margin-bottom:30px;"> </div>
+
 However, this will produces errors for provinces that have many records  as we saw for `"Dal"` above. 
 To avoid this, we could use arguments `maxlimit` and `offset` from `get.edh()` and combine these outputs.
 
 
 <div style="margin-bottom:60px;"> </div>
+
 Another possiblity is to build the `EDH` dataset again from scratch and avoid dealing with timeout errors 
 in some provinces.
 
