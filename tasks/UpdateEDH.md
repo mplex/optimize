@@ -101,7 +101,7 @@ packageVersion("sdam")
 ```
 
 ```
-[1] '0.4.6'
+[1] '0.6.2'
 ```
 
 
@@ -320,7 +320,7 @@ servers seems to help solving this issue.
 
 <div style="margin-bottom:30px;"> </div>
 
-<!-- Help wanted 😄 -->
+
 
 
 
@@ -334,8 +334,8 @@ servers seems to help solving this issue.
 
 * [Re-encoding Greek characters from 'EDH' dataset](https://sdam-au.github.io/sdam/articles/Encoding.html)
 * [Plotting ancient Roman provinces and regions](https://sdam-au.github.io/sdam/articles/RomanProvs.html)
-<!-- * [R package `"sdam"`](https://sdam-au.github.io/sdam/)
-* [Social Dynamics and complexity in the Ancient Mediterranean Project](https://sdam-au.github.io/sdam-au/) -->
+* [Plotting Roman Empire transport network](https://sdam-au.github.io/sdam/articles/TransportNetwork.html)
+* [Social Dynamics and complexity in the Ancient Mediterranean Project](https://sdam-au.github.io/sdam-au/)
 
 
 
