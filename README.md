@@ -13,3 +13,11 @@
    
 - **Task 3**: Encoding Greek and Latin extended characters from `EDH` dataset [link](https://sdam-au.github.io/sdam/articles/Encoding.html)
    + function `cln()` in `"sdam"` package
+
+<br />
+
+- **Task 4**: Multiple imputation on `EDH` dates
+   + [EDH similarities per province and dates](https://htmlpreview.github.io/?https://github.com/mplex/optimize/blob/DL-sand/tasks/EDHSimilarityProvinceDates.html)
+
+<br />
+
