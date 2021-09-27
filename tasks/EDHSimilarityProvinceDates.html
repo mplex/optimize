@@ -9,7 +9,7 @@
 
 <meta name="author" content="">
 
-<meta name="date" content="2021-09-09">
+<meta name="date" content="2021-09-27">
 
 <title>EDH similarities per province and dates</title>
 
@@ -52,15 +52,6 @@ if (!!window.navigator.userAgent.match("MSIE 8")) {
 !function(a){"use strict";a.matchMedia=a.matchMedia||function(a){var b,c=a.documentElement,d=c.firstElementChild||c.firstChild,e=a.createElement("body"),f=a.createElement("div");return f.id="mq-test-1",f.style.cssText="position:absolute;top:-100em",e.style.background="none",e.appendChild(f),function(a){return f.innerHTML='&shy;<style media="'+a+'"> #mq-test-1 { width: 42px; }</style>',c.insertBefore(e,d),b=42===f.offsetWidth,c.removeChild(e),{matches:b,media:a}}}(a.document)}(this),function(a){"use strict";function b(){u(!0)}var c={};a.respond=c,c.update=function(){};var d=[],e=function(){var b=!1;try{b=new a.XMLHttpRequest}catch(c){b=new a.ActiveXObject("Microsoft.XMLHTTP")}return function(){return b}}(),f=function(a,b){var c=e();c&&(c.open("GET",a,!0),c.onreadystatechange=function(){4!==c.readyState||200!==c.status&&304!==c.status||b(c.responseText)},4!==c.readyState&&c.send(null))};if(c.ajax=f,c.queue=d,c.regex={media:/@media[^\{]+\{([^\{\}]*\{[^\}\{]*\})+/gi,keyframes:/@(?:\-(?:o|moz|webkit)\-)?keyframes[^\{]+\{(?:[^\{\}]*\{[^\}\{]*\})+[^\}]*\}/gi,urls:/(url\()['"]?([^\/\)'"][^:\)'"]+)['"]?(\))/g,findStyles:/@media *([^\{]+)\{([\S\s]+?)$/,only:/(only\s+)?([a-zA-Z]+)\s?/,minw:/\([\s]*min\-width\s*:[\s]*([\s]*[0-9\.]+)(px|em)[\s]*\)/,maxw:/\([\s]*max\-width\s*:[\s]*([\s]*[0-9\.]+)(px|em)[\s]*\)/},c.mediaQueriesSupported=a.matchMedia&&null!==a.matchMedia("only all")&&a.matchMedia("only all").matches,!c.mediaQueriesSupported){var g,h,i,j=a.document,k=j.documentElement,l=[],m=[],n=[],o={},p=30,q=j.getElementsByTagName("head")[0]||k,r=j.getElementsByTagName("base")[0],s=q.getElementsByTagName("link"),t=function(){var a,b=j.createElement("div"),c=j.body,d=k.style.fontSize,e=c&&c.style.fontSize,f=!1;return b.style.cssText="position:absolute;font-size:1em;width:1em",c||(c=f=j.createElement("body"),c.style.background="none"),k.style.fontSize="100%",c.style.fontSize="100%",c.appendChild(b),f&&k.insertBefore(c,k.firstChild),a=b.offsetWidth,f?k.removeChild(c):c.removeChild(b),k.style.fontSize=d,e&&(c.style.fontSize=e),a=i=parseFloat(a)},u=function(b){var c="clientWidth",d=k[c],e="CSS1Compat"===j.compatMode&&d||j.body[c]||d,f={},o=s[s.length-1],r=(new Date).getTime();if(b&&g&&p>r-g)return a.clearTimeout(h),h=a.setTimeout(u,p),void 0;g=r;for(var v in l)if(l.hasOwnProperty(v)){var w=l[v],x=w.minw,y=w.maxw,z=null===x,A=null===y,B="em";x&&(x=parseFloat(x)*(x.indexOf(B)>-1?i||t():1)),y&&(y=parseFloat(y)*(y.indexOf(B)>-1?i||t():1)),w.hasquery&&(z&&A||!(z||e>=x)||!(A||y>=e))||(f[w.media]||(f[w.media]=[]),f[w.media].push(m[w.rules]))}for(var C in n)n.hasOwnProperty(C)&&n[C]&&n[C].parentNode===q&&q.removeChild(n[C]);n.length=0;for(var D in f)if(f.hasOwnProperty(D)){var E=j.createElement("style"),F=f[D].join("\n");E.type="text/css",E.media=D,q.insertBefore(E,o.nextSibling),E.styleSheet?E.styleSheet.cssText=F:E.appendChild(j.createTextNode(F)),n.push(E)}},v=function(a,b,d){var e=a.replace(c.regex.keyframes,"").match(c.regex.media),f=e&&e.length||0;b=b.substring(0,b.lastIndexOf("/"));var g=function(a){return a.replace(c.regex.urls,"$1"+b+"$2$3")},h=!f&&d;b.length&&(b+="/"),h&&(f=1);for(var i=0;f>i;i++){var j,k,n,o;h?(j=d,m.push(g(a))):(j=e[i].match(c.regex.findStyles)&&RegExp.$1,m.push(RegExp.$2&&g(RegExp.$2))),n=j.split(","),o=n.length;for(var p=0;o>p;p++)k=n[p],l.push({media:k.split("(")[0].match(c.regex.only)&&RegExp.$2||"all",rules:m.length-1,hasquery:k.indexOf("(")>-1,minw:k.match(c.regex.minw)&&parseFloat(RegExp.$1)+(RegExp.$2||""),maxw:k.match(c.regex.maxw)&&parseFloat(RegExp.$1)+(RegExp.$2||"")})}u()},w=function(){if(d.length){var b=d.shift();f(b.href,function(c){v(c,b.href,b.media),o[b.href]=!0,a.setTimeout(function(){w()},0)})}},x=function(){for(var b=0;b<s.length;b++){var c=s[b],e=c.href,f=c.media,g=c.rel&&"stylesheet"===c.rel.toLowerCase();e&&g&&!o[e]&&(c.styleSheet&&c.styleSheet.rawCssText?(v(c.styleSheet.rawCssText,e,f),o[e]=!0):(!/^([a-zA-Z:]*\/\/)/.test(e)&&!r||e.replace(RegExp.$1,"").split("/")[0]===a.location.host)&&("//"===e.substring(0,2)&&(e=a.location.protocol+e),d.push({href:e,media:f})))}w()};x(),c.update=x,c.getEmValue=t,a.addEventListener?a.addEventListener("resize",b,!1):a.attachEvent&&a.attachEvent("onresize",b)}}(this);
 };
 </script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
 <script>
 
 /**
@@ -204,24 +195,8 @@ window.buildTabsets = function(tocID) {
 
 </script>
 
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
 
-
-<style type="text/css">
-  code {
-    white-space: pre;
-  }
-  .sourceCode {
-    overflow: visible;
-  }
-</style>
+<style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
@@ -306,9 +281,39 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
   }
 })();
 </script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
-
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
 
 
 
@@ -318,6 +323,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -334,9 +343,6 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
-pre code {
-  padding: 0;
-}
 </style>
 
 
@@ -349,6 +355,7 @@ pre code {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
+  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -497,9 +504,42 @@ pre code {
 .MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
 .MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
 .MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?V=2.7.2') format('woff'), url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?V=2.7.2') format('opentype')}
+@font-face {font-family: MathJax_Main; src: url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?V=2.7.2') format('woff'), url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?V=2.7.2') format('opentype'); font-weight: bold}
+@font-face {font-family: MathJax_Main; src: url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?V=2.7.2') format('woff'), url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?V=2.7.2') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Math; src: url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?V=2.7.2') format('woff'), url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?V=2.7.2') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?V=2.7.2') format('woff'), url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?V=2.7.2') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?V=2.7.2') format('woff'), url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?V=2.7.2') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?V=2.7.2') format('woff'), url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?V=2.7.2') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?V=2.7.2') format('woff'), url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?V=2.7.2') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?V=2.7.2') format('woff'), url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?V=2.7.2') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
 </style></head>
 
-<body><div id="MathJax_Message" style="display: none;"></div>
+<body><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px none; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
 
 
 <div class="container-fluid main-container">
@@ -507,12 +547,16 @@ pre code {
 
 
 
-<div id="header">
+<div class="fluid-row" id="header">
 
 
 
 <h1 class="title toc-ignore">EDH similarities per province and dates</h1>
-<h4 class="date">09 september 2021</h4>
+<h3 class="subtitle"></h3><h4>
+<em>with restricted multiple imputation</em>
+</h4>
+<br><br>
+<h4 class="date">27 september 2021</h4>
 
 </div>
 
@@ -544,7 +588,7 @@ h3 {
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># package "sdam" beta version</span></a>
 <a class="sourceLine" id="cb1-2" title="2">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"mplex/cedhar"</span>, <span class="dt">subdir=</span><span class="st">"pkg/sdam"</span>)</a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="co"># dependencies</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="kw">install.packages</span>(<span class="st">"https://cran.r-project.org/src/contrib/multiplex_2.9.6.tar.gz"</span>, <span class="dt">repo=</span><span class="ot">NULL</span>, <span class="dt">type=</span><span class="st">"source"</span>)</a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="kw">install.packages</span>(<span class="st">"multiplex"</span>)</a>
 <a class="sourceLine" id="cb1-5" title="5"><span class="kw">install.packages</span>(<span class="st">"multigraph"</span>)</a></code></pre></div>
 <div style="margin-bottom:30px;">
 
@@ -552,10 +596,10 @@ h3 {
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># load and check versions</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="kw">library</span>(sdam)</a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="kw">packageVersion</span>(<span class="st">"sdam"</span>)</a></code></pre></div>
-<pre><code>[1] '0.6.5'</code></pre>
+<pre><code>[1] '0.7.2'</code></pre>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">library</span>(multigraph)</a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="kw">packageVersion</span>(<span class="st">"multigraph"</span>)</a></code></pre></div>
-<pre><code>[1] '0.95'</code></pre>
+<pre><code>[1] '0.96'</code></pre>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">packageVersion</span>(<span class="st">"multiplex"</span>)</a></code></pre></div>
 <pre><code>[1] '2.9.6'</code></pre>
 <div style="margin-bottom:60px;">
@@ -585,8 +629,7 @@ h3 {
 </ul>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="co"># EDH dataset as a dataframe with variables</span></a>
 <a class="sourceLine" id="cb10-2" title="2">edhv &lt;-<span class="st"> </span><span class="kw">edhw</span>(<span class="dt">vars=</span><span class="kw">c</span>(dates, vars, <span class="st">"province_label"</span>), <span class="dt">as=</span><span class="st">"df"</span>)</a></code></pre></div>
-<pre><code>Warning in edhw(vars = c(dates, vars, "province_label"), as = "df"): "x" is NULL and dataset "EDH"
-is taken if available.</code></pre>
+<pre><code>Warning in edhw(vars = c(dates, vars, "province_label"), as = "df"): "x" is NULL and dataset "EDH" is taken if available.</code></pre>
 <div style="margin-bottom:60px;">
 
 </div>
@@ -604,63 +647,150 @@ is taken if available.</code></pre>
 
 </div>
 <p>…and where the number of inscriptions per province is computed.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="co">## Dalmatia is largest</span></a>
-<a class="sourceLine" id="cb13-2" title="2"><span class="kw">sort</span>(<span class="kw">unlist</span>(<span class="kw">lapply</span>(edhvp, nrow)))</a></code></pre></div>
-<pre><code> Ass  Inc  Tri  Val  Arm  Mes  Cyp  Cor  LyP  Cap  Cre  AlG  ReB  Cil  Cyr  Epi  Lig  Pic  Aeg  Tra 
-   0    0    0    0    3   12   35   46   59   63   66   77   78   86   90  144  153  170  172  180 
- Bar  Iud  Sic  AlP  Gal  Sar  Aem  Ara  BrL  MaT  BiP  Umb  Syr  Thr  AlM  Aqu  AlC  Asi  Lug  Sam 
- 188  192  193  206  211  229  231  234  246  291  293  348  403  412  416  427  476  491  597  648 
- Etr  ApC  Rae  MaC  VeH  Ach  Nar  Mak  MoS  Lus  Bel  MoI  LaC  Num  Nor  Bae  PaI  GeI  Dac  Rom 
- 671  760 1019 1127 1161 1328 1404 1409 1518 1577 1697 2106 2606 2642 2825 3035 3243 3623 3721 4331 
- PaS  Afr  Bri  HiC  GeS  Dal 
-4384 4496 4562 5221 7057 7712 </code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="co"># Dalmatia has largest amount of inscriptions</span></a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="kw">sort</span>(<span class="kw">unlist</span>(<span class="kw">lapply</span>(edhvp, nrow)), <span class="dt">decreasing=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<pre><code> Dal  GeS  HiC  Bri  Afr  PaS  Rom  Dac  GeI  PaI  Bae  Nor  Num  LaC  MoI  Bel  Lus  MoS  Mak  Nar  Ach  VeH  MaC  Rae  ApC 
+7711 7024 5221 4561 4496 4384 4331 3682 3352 3240 3035 2789 2642 2606 2073 1691 1577 1515 1409 1403 1328 1161 1127 1017  760 
+ Etr  Sam  Lug  Asi  AlC  Aqu  AlM  Thr  Syr  Umb  BiP  MaT  BrL  Ara  Aem  Sar  Gal  AlP  Sic  Iud  Bar  Tra  Aeg  Pic  Lig 
+ 671  648  597  491  476  427  416  411  403  348  293  291  246  234  231  229  211  206  193  192  189  180  172  170  153 
+ Epi  Cyr  Cil  ReB  AlG  Cre  Cap  LyP  Cor  Cyp  Mes  Arm  Ass  Inc  Tri  Val 
+ 144   90   86   78   77   66   63   59   46   35   12    3    0    0    0    0 </code></pre>
 <div style="margin-bottom:60px;">
 
 </div>
 <div id="similarity-example" class="section level5">
 <h5>Similarity example</h5>
-<p>Organize similarities in Roman province Raetia according to attributes defined in <code>vars</code> (by default include <code>dates</code>).</p>
+<p>Organize similarities in Roman province of Aegyptus according to attributes defined in <code>vars</code> (that by default includes <code>dates</code>).</p>
 <div style="margin-bottom:30px;">
 
 </div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="co"># similarities in Raetia by dates</span></a>
-<a class="sourceLine" id="cb15-2" title="2"><span class="kw">edhwpd</span>(<span class="dt">vars=</span>vars, <span class="dt">prov=</span><span class="st">"Rae"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="co"># AEGYPTUS</span></a>
+<a class="sourceLine" id="cb15-2" title="2">aeg &lt;-<span class="st"> </span><span class="kw">edhw</span>(<span class="dt">x=</span>edhv, <span class="dt">vars=</span><span class="kw">c</span>(dates, vars), <span class="dt">province=</span><span class="st">"Aeg"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">head</span>(aeg)</a></code></pre></div>
+<pre><code>           id     type_of_monument        type_of_inscription not_before not_after    language findspot_ancient
+741  HD000741                cliff identification inscription       0001      0200       Latin             &lt;NA&gt;
+2003 HD002003 architectural member identification inscription      -0116      &lt;NA&gt; Greek-Latin           Philae
+3126 HD003126              diptych                       &lt;NA&gt;       0101      0200       Latin             &lt;NA&gt;
+6782 HD006782                 &lt;NA&gt;                       &lt;NA&gt;       0212      0250       Latin       Alexandria
+6785 HD006785                 &lt;NA&gt;                       &lt;NA&gt;       0200      0250       Latin       Alexandria
+8142 HD008142               tabula                    epitaph       0065      &lt;NA&gt;       Latin       Alexandria</code></pre>
+<div style="margin-bottom:30px;">
+
+</div>
+<p>Then we proceed by creating a similarity matrix <code>maeg</code> on the chosen attribute variables.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="co"># adjacency matrix</span></a>
+<a class="sourceLine" id="cb18-2" title="2">maeg &lt;-<span class="st"> </span><span class="kw">simil</span>(aeg, <span class="dt">vars=</span>vars)</a></code></pre></div>
+<p>and look at the first 10 entries</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1">maeg[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]</a></code></pre></div>
+<pre><code>         HD000741 HD002003 HD003126 HD006782 HD006785 HD008142 HD008673 HD011661 HD011887 HD012418
+HD000741        0        1        1        1        1        1        1        1        1        1
+HD002003        1        0        0        0        0        0        0        0        0        0
+HD003126        1        0        0        1        1        1        1        1        1        1
+HD006782        1        0        1        0        2        2        1        1        1        1
+HD006785        1        0        1        2        0        2        1        1        1        1
+HD008142        1        0        1        2        2        0        1        1        1        1
+HD008673        1        0        1        1        1        1        0        1        1        1
+HD011661        1        0        1        1        1        1        1        0        1        1
+HD011887        1        0        1        1        1        1        1        1        0        1
+HD012418        1        0        1        1        1        1        1        1        1        0</code></pre>
+<p>None of the above inscriptions have all attributes in common; however some epigraphical material have in this data set.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">max</span>(maeg)</a></code></pre></div>
+<pre><code>[1] 4</code></pre>
+<div style="margin-bottom:30px;">
+
+</div>
+<p>We proceed by creating subsets of inscriptions having all 
+characteristics in common, which means that the most similar 
+inscriptions form <em>cliques</em>.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="co"># dichotomize and remove isolates</span></a>
+<a class="sourceLine" id="cb23-2" title="2">mdaeg &lt;-<span class="st"> </span><span class="kw">rm.isol</span>(<span class="kw">dichot</span>(maeg,<span class="dt">c=</span><span class="kw">max</span>(maeg)))</a></code></pre></div>
+<p>and look at the graph of these cliques.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1"><span class="co"># define the scope</span></a>
+<a class="sourceLine" id="cb24-2" title="2">scp &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">directed=</span><span class="ot">FALSE</span>, <span class="dt">valued=</span><span class="ot">TRUE</span>, <span class="dt">pos=</span><span class="dv">0</span>, <span class="dt">col=</span><span class="dv">8</span>, <span class="dt">fcol=</span><span class="st">"blue"</span>, <span class="dt">cex=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb24-3" title="3"><span class="co"># apply a force directed layout</span></a>
+<a class="sourceLine" id="cb24-4" title="4"><span class="kw">multigraph</span>(mdaeg, <span class="dt">scope=</span>scp, <span class="dt">layout=</span><span class="st">"force"</span>, <span class="dt">seed=</span><span class="dv">2</span>)</a></code></pre></div>
+<div class="figure" style="text-align: center">
+<img src="data:image/png;base64,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KtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACsEu0CAMAq0S4AAKwS7QIAwCrRLgAArBLtAgDAKtEuAACs+v9TLCEzIhVKhAAAAABJRU5ErkJggg==" alt="Cliques of Aegyptian inscriptions" width="672">
+<p class="caption">
+Cliques of Aegyptian inscriptions
+</p>
+</div>
+<div style="margin-bottom:60px;">
+
+</div>
+</div>
+<div id="clique-components" class="section level4">
+<h4>Clique components</h4>
+<p>Clique components then constitute subsets where the imputation takes 
+place. With the dichotomization criterion applied, the rest of 
+inscriptions were disregarded and they become another subset of <em>isolates</em>.</p>
+<p>We proceed by recording components ans isolates in <code>caeg</code>.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="co"># components</span></a>
+<a class="sourceLine" id="cb25-2" title="2">caeg &lt;-<span class="st"> </span><span class="kw">comps</span>(mdaeg)</a></code></pre></div>
+<pre><code>$com
+$com[[1]]
+[1] "HD037168" "HD044139" "HD044140" "HD044141" "HD044138"
+
+$com[[2]]
+[1] "HD044156" "HD044157"
+
+$com[[3]]
+[1] "HD045225" "HD045226" "HD045227"
+
+$com[[4]]
+[1] "HD048626" "HD048627" "HD061438" "HD061439"
+
+$com[[5]]
+[1] "HD037177" "HD037178" "HD037179" "HD037180" "HD037181" "HD037182" "HD037183"
+
+$com[[6]]
+[1] "HD050446" "HD050447"
+
+
+$isol
+character(0)</code></pre>
+<div style="margin-bottom:30px;">
+
+</div>
+<p>And select items from the data set in the component</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">edhw</span>(aeg, <span class="dt">id=</span>caeg<span class="op">$</span>com[[<span class="dv">1</span>]])</a></code></pre></div>
+<pre><code>            id type_of_monument type_of_inscription not_before not_after language findspot_ancient
+39521 HD037168            stele             epitaph       0110      0129    Greek      Terenouthis
+46474 HD044138            stele             epitaph      -0030      0100    Greek      Terenouthis
+46475 HD044139            stele             epitaph       0156      0179    Greek      Terenouthis
+46476 HD044140            stele             epitaph      -0011      &lt;NA&gt;    Greek      Terenouthis
+46477 HD044141            stele             epitaph      -0026      &lt;NA&gt;    Greek      Terenouthis</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1"><span class="kw">edhw</span>(aeg, <span class="dt">id=</span>caeg<span class="op">$</span>com[[<span class="dv">2</span>]])</a></code></pre></div>
+<pre><code>            id type_of_monument type_of_inscription not_before not_after language findspot_ancient
+46492 HD044156            block  votive inscription       &lt;NA&gt;      &lt;NA&gt;    Greek           Kellis
+46493 HD044157            block  votive inscription       &lt;NA&gt;      &lt;NA&gt;    Greek           Kellis</code></pre>
 <div style="margin-bottom:60px;">
 
 </div>
 </div>
 </div>
-<div id="imputation" class="section level3">
-<h3>Imputation</h3>
-<p>Multiple imputation takes place in subsets from a province data set.</p>
+<div id="imputation-on-dates" class="section level3">
+<h3>Imputation on dates</h3>
+<p><em>Restricted</em> (or supervised) multiple imputation on dates takes place in subsets from a province data set.</p>
 <div style="margin-bottom:30px;">
 
 </div>
-<div id="scenes" class="section level5">
-<h5>Scenes</h5>
+<div id="scenes" class="section level4">
+<h4>Scenes</h4>
+<p>For time intervals, there are following possibilities:</p>
 <ol style="list-style-type: decimal">
 <li>Cases where TAQ and TPQ are missing, take <em>from the subset</em>:</li>
 </ol>
 <ul>
 <li>min TAQ and max TPQ</li>
-<li>min TAQ and avg timespan</li>
-<li>max TPQ and avg timespan</li>
+<li>min TAQ and avg length timespan</li>
+<li>max TPQ and avg length timespan</li>
 <li>avg date</li>
 </ul>
 <div style="margin-bottom:30px;">
 
 </div>
-<pre><code># Raetia subset 2
-[[1]][[2]]
-            id type_of_monument type_of_inscription not_before not_after language findspot_ancient
-4849  HD004849           tabula    military diploma       0167      0168    Latin          Abusina
-4858  HD004858           tabula    military diploma       0151      0170    Latin          Abusina
-9227  HD009227           tabula    military diploma       &lt;NA&gt;      &lt;NA&gt;    Latin          Abusina
-9230  HD009230           tabula    military diploma       &lt;NA&gt;      &lt;NA&gt;    Latin          Abusina
-14582 HD014582           tabula    military diploma       &lt;NA&gt;      &lt;NA&gt;    Latin          Abusina
-17869 HD017869           tabula    military diploma       &lt;NA&gt;      &lt;NA&gt;    Latin          Abusina
-58160 HD055812           tabula    military diploma       0157      0161    Latin          Abusina
-67340 HD065011           tabula    military diploma       &lt;NA&gt;      &lt;NA&gt;    Latin          Abusina</code></pre>
+<p>This is like the second component above in <code>caeg</code>.</p>
 <div style="margin-bottom:60px;">
 
 </div>
@@ -669,29 +799,87 @@ is taken if available.</code></pre>
 </ol>
 <ul>
 <li>max TPQ</li>
-<li>avg timespan</li>
+<li>avg length timespan</li>
+<li>avg date?</li>
 </ul>
 <div style="margin-bottom:30px;">
 
 </div>
-<pre><code># Raetia subset 47
-[[1]][[47]]
-            id type_of_monument type_of_inscription not_before not_after language findspot_ancient
-60719 HD058371           tabula             epitaph       0548      &lt;NA&gt;    Latin            Curia
-60721 HD058373           tabula             epitaph       0701      0750    Latin            Curia</code></pre>
+<p>This is like the first component above in <code>caeg</code>.</p>
+<p>```</p>
 <div style="margin-bottom:60px;">
 
 </div>
 <ol style="list-style-type: decimal" start="3">
-<li>Cases where TAQ is missing (if there are), take from the subset</li>
+<li>Cases where TAQ is missing (if any), take from the subset</li>
 </ol>
 <ul>
 <li>min TAQ</li>
-<li>avg timespan.</li>
+<li>avg length timespan</li>
+<li>avg date?</li>
 </ul>
+<div style="margin-bottom:40px;">
+
+</div>
+<p>Hence, for <code>NA</code>-<code>NA</code> time intervals there are <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 3.336em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.738em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.525em, 1002.71em, 2.571em, -1000em); top: -2.381em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mi" id="MathJax-Span-3" style="font-family: MathJax_Math; font-style: italic;">m</span><span class="mo" id="MathJax-Span-4" style="font-family: MathJax_Main; padding-left: 0.278em;">=</span><span class="mn" id="MathJax-Span-5" style="font-family: MathJax_Main; padding-left: 0.278em;">4</span></span><span style="display: inline-block; width: 0px; height: 2.381em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.085em; border-left: 0px solid; width: 0px; height: 0.968em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi><mo>=</mo><mn>4</mn></math></span></span><script type="math/tex" id="MathJax-Element-1">m=4</script></span> imputations, while when there is only one missing date the number of imputations is lower.</p>
 <div style="margin-bottom:60px;">
 
 </div>
+</div>
+</div>
+<div id="province-dates" class="section level2">
+<h2>Province dates</h2>
+<p>To replace missing dates, we use function <code>rmids()</code> that depends on the output of <code>edhwpd()</code>.</p>
+<p>This is an example for Armenia province that has the fewest inscriptions in EDH data base.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1"><span class="kw">require</span>(<span class="st">"magrittr"</span>)</a>
+<a class="sourceLine" id="cb31-2" title="2"><span class="kw">edhwpd</span>(<span class="dt">vars=</span>vars, <span class="dt">province=</span><span class="st">"Arm"</span>, <span class="dt">clean=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb31-3" title="3"><span class="st">  </span><span class="kw">rmids</span>()</a></code></pre></div>
+<pre><code>Warning in rmids(.): max TPQ taken from province.</code></pre>
+<pre><code>Warning in rmids(.): avg len TS taken from province.</code></pre>
+<pre><code>Warning in rmids(.): avg taken from province.</code></pre>
+<pre><code>Warning in rmids(.): min TAQ taken from province.</code></pre>
+<pre><code>Warning in rmids(.): max TPQ taken from province.</code></pre>
+<pre><code>Warning in rmids(.): avg len TS taken from province.</code></pre>
+<pre><code>[[1]]
+[[1]][[1]]
+[[1]][[1]]$`taq-NA`
+              id type_of_monument             type_of_inscription not_before not_after language findspot_ancient
+15521.1 HD015521           tabula building/dedicatory inscription       0116       116    Latin    Artaxata, bei
+15521.2 HD015521           tabula building/dedicatory inscription       0116         4    Latin    Artaxata, bei
+
+[[1]][[1]]$`NA-NA`
+              id type_of_monument type_of_inscription not_before not_after language findspot_ancient
+15524.1 HD015524            stele             epitaph        116       116    Latin    Artaxata, bei
+15524.2 HD015524            stele             epitaph        116       118    Latin    Artaxata, bei
+15524.3 HD015524            stele             epitaph        114       116    Latin    Artaxata, bei
+15524.4 HD015524            stele             epitaph        116       116    Latin    Artaxata, bei
+
+
+
+[[2]]
+[[2]]$`NA-NA`
+              id type_of_monument type_of_inscription not_before not_after language findspot_ancient
+32270.1 HD029916             &lt;NA&gt;                &lt;NA&gt;        114       116    Latin             &lt;NA&gt;
+32270.2 HD029916             &lt;NA&gt;                &lt;NA&gt;        114       116    Latin             &lt;NA&gt;
+32270.3 HD029916             &lt;NA&gt;                &lt;NA&gt;        114       116    Latin             &lt;NA&gt;
+32270.4 HD029916             &lt;NA&gt;                &lt;NA&gt;        116       116    Latin             &lt;NA&gt;
+
+
+attr(,"class")
+[1] EDH Arm 3   9  </code></pre>
+<div style="margin-bottom:60px;">
+
+</div>
+</div>
+<div id="pooling" class="section level2">
+<h2>Pooling</h2>
+<p>The <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-6" style="width: 1.074em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.893em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.76em, 1000.87em, 2.571em, -1000em); top: -2.381em; left: 0em;"><span class="mrow" id="MathJax-Span-7"><span class="mi" id="MathJax-Span-8" style="font-family: MathJax_Math; font-style: italic;">m</span></span><span style="display: inline-block; width: 0px; height: 2.381em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.085em; border-left: 0px solid; width: 0px; height: 0.686em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi></math></span></span><script type="math/tex" id="MathJax-Element-2">m</script></span> results are pooled into final point estimates plus standard error by pooling rules.</p>
+<p>Options for time intervals are take:</p>
+<ul>
+<li>average with avg length time-span</li>
+<li>min TAQ and max TPQ</li>
+<li>max TAQ and min TPQ</li>
+</ul>
 <div style="margin-bottom:60px;">
 
 </div>
@@ -699,17 +887,17 @@ is taken if available.</code></pre>
 <div style="margin-bottom:60px;">
 
 </div>
-</div>
-</div>
 <div id="see-also" class="section level3">
 <h3>See also</h3>
 <ul>
 <li><a href="https://github.com/mplex/cedhar/blob/master/typesetting/reports/sdam.pdf"><code>"sdam"</code> manual</a></li>
 </ul>
+<!-- https://htmlpreview.github.io/?https://github.com/mplex/optimize/blob/DL-sand/tasks/EDHSimilarityProvinceDates.html -->
 <div style="margin-bottom:60px;">
 
 </div>
 <p>&nbsp;</p>
+</div>
 </div>
 
 
@@ -721,7 +909,7 @@ is taken if available.</code></pre>
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -739,7 +927,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
+    $(this).parent().toggleClass('nav-tabs-open')
   });
 });
 </script>
@@ -759,4 +947,4 @@ $(document).ready(function () {
 
 
 
-</body></html>
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px none; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px none; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-size-adjust: none; font-family: MathJax_Main, sans-serif;"></div></div></body></html>
