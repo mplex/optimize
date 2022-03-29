@@ -1,4 +1,13 @@
 
+## Test networkD3
+
+- [test that works](https://htmlpreview.github.io/?https://github.com/mplex/optimize/blob/master/tasks/RMdnetD3.htm)
+
+- [Roman Shipwrecks network](https://htmlpreview.github.io/?https://github.com/mplex/optimize/blob/master/tasks/RomanShipwrecksnetwork.html)
+
+<br /><br />
+
+
 ## Digital Literacy 2020-2021 optimization project sandbox
 
 
