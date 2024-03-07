@@ -7,5 +7,4 @@ R --no-save << EOF
 install.packages("multiplex")
 install.packages("multigraph")
 install.packages("sdam")
-remotes::install_git("https://vso-via-teamservices.visualstudio.com/Sandkasse-AOST/_git/viadw", git="external")
 EOF
