@@ -1,33 +1,22 @@
 
-## Test networkD3
+## Optimize code
 
-- [test that works](https://htmlpreview.github.io/?https://github.com/mplex/optimize/blob/master/tasks/RMdnetD3.htm)
-
-- [Shipwrecks network Mediterranean sea](https://htmlpreview.github.io/?https://github.com/mplex/optimize/blob/master/tasks/ShipwrecksNetworkMediterranean.html)
 
 <br /><br />
 
 
-## Digital Literacy 2020-2021 optimization project sandbox
+## Contents
 
 
-- **Task 1**: Optimization of graph layout algorithms [link](https://github.com/mplex/optimize/blob/master/code/forced.R)
-   + `forced` algorithm files with commented `R` and `C++` initial codes
+|Folder|Description|
+|---|---|
+|code|scripts to be optimized|
+|docs|documentation if needed|
 
-<br />
 
-- **Task 2**: Updating the _EDH dataset_ [link](https://github.com/mplex/optimize/blob/master/tasks/UpdateEDH.md)
-   + DeiC’s UCloud
-   
-   
-- **Task 3**: Encoding Greek and Latin extended characters from `EDH` dataset [link](https://sdam-au.github.io/sdam/articles/Encoding.html)
-   + function `cln()` in `"sdam"` package
+- `C++` and `R` scripts for forced directed layout of graphs [used in `R` package `multigraph`](https://cran.r-project.org/package=multigraph)
+- `shell` files [package managers for Docker Jupyter Notebook extension](https://github.com/marcelo-ochoa/jupyter-docker-extension)
 
 <br />
 
-- **Task 4**: Multiple imputation on `EDH` dates
-   + [EDH similarities per province and dates](https://htmlpreview.github.io/?https://github.com/mplex/optimize/blob/master/tasks/EDHSimilarityProvinceDates.html)
-
-<br />
-
-
+&nbsp;
