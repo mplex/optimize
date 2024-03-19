@@ -8,4 +8,5 @@ install.packages("shiny")
 install.packages("shinyjs")
 install.packages("htmltools")
 install.packages("DT")
+install.packages("base64enc")
 EOF
