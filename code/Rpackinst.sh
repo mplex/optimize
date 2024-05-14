@@ -5,6 +5,6 @@ wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | tee
 add-apt-repository -y "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
 R --no-save << EOF
 install.packages("multiplex")
-install.packages("multigraph", repos=NULL, type="source")
+install.packages("https://cran.r-project.org/src/contrib/multigraph_0.99-3.tar.gz", repos=NULL, type="source")
 install.packages("sdam")
 EOF
