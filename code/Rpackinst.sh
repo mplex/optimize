@@ -7,6 +7,6 @@ R --no-save << EOF
 install.packages("multiplex")
 install.packages("multigraph")
 #install.packages("https://cran.r-project.org/src/contrib/multigraph_0.99-3.tar.gz", repos=NULL, type="source")
-devtools::install_github("mplex/cedhar", subdir="pkg/sdam")
+#devtools::install_github("mplex/cedhar", subdir="pkg/sdam")
 #install.packages("sdam")
 EOF
