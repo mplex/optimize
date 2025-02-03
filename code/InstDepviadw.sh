@@ -6,7 +6,7 @@ add-apt-repository -y "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_re
 R --no-save << EOF
 install.packages("PKI")
 install.packages("odbc")
-#install.packages("httr")
+install.packages("httr2")
 install.packages("rjson")
 install.packages("RODBC")
 #install.packages("knitr, rmarkdown")
