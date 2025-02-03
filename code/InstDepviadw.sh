@@ -6,6 +6,8 @@ add-apt-repository -y "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_re
 R --no-save << EOF
 install.packages("PKI")
 install.packages("odbc")
+install.packages(c("askpass","openssl"))
+install.packages("curl")
 install.packages("httr2")
 install.packages("rjson")
 install.packages("RODBC")
