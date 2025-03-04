@@ -8,5 +8,5 @@ add-apt-repository -y "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_re
 R --no-save << EOF
 install.packages("odbc")
 #install.packages("odbc", configure.vars=c("LIB_DIR='/usr/local/lib/R/site-library' INCLUDE_DIR='anaconda3/pkgs/unixodbc-2.3.11-h5eee18b_0/include/sql.h''"))
-#install.packages("RODBC")
+install.packages("RODBC")
 EOF
