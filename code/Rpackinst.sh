@@ -6,6 +6,6 @@ add-apt-repository -y "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_re
 R --no-save << EOF
 #install.packages("multiplex")
 #install.packages("multigraph")
-install.packages("remotes", repos=NULL)
+install.packages("remotes")
 #devtools::install_github("mplex/cedhar", subdir="pkg/sdam")
 EOF
