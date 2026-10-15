@@ -5,6 +5,6 @@ wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | tee
 add-apt-repository -y "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
 R --no-save << EOF
 #remove.packages("multiplex", lib=.libPaths()[1])
-install.packages("multiplex")
+install.packages("multiplex", repos = "https://cloud.r-project.org")
 #remotes::install_github(repo="mplex/multiplex", ref="R_4.3")
 EOF
